@@ -7,7 +7,7 @@ function Header() {
   const { pathname } = useLocation()
   const [changeBackground, setChangeBackground] = useState(false)
 
-  console.log(window)
+  // console.log(window)
 
   window.scrollY = () => {
     if (!setChangeBackground && window.pageYOffset > 150) {
@@ -23,7 +23,7 @@ function Header() {
       <img src={Logo} alt="logo-dev-movies" />
       <Menu>
         <Li isActive={pathname === '/'}>
-          <Link to={'/'}>Home</Link>
+          <Link to={'/dev_movies/'}>Home</Link>
         </Li>
         <Li isActive={pathname.includes('filmes')}>
           <Link to={'/filmes'}>Filmes</Link>

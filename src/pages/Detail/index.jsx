@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Container, Background } from './style'
+import { Container, Background, Poster, Info, ContainerMovies } from './style'
 import {
   getMovieById,
   getMovieCredits,
@@ -8,6 +8,9 @@ import {
 } from '../../services/getData'
 import { useParams } from 'react-router-dom'
 import { getImages } from '../../utils/getImages'
+import SpanGenres from '../../components/SpanGenres'
+import Credits from '../../components/Credits'
+import Slider from '../../components/Slides'
 
 function Detail() {
   const { id } = useParams()
@@ -26,7 +29,6 @@ function Detail() {
         getMovieVideos(id),
       ])
         .then(([movie, similar, credits, videos]) => {
-          console.log({ movie, similar, credits, videos })
           setMovie(movie)
           setMovieSimilar(similar)
           setMovieCredits(credits)
@@ -40,10 +42,40 @@ function Detail() {
 
   return (
     <>
-      {movie && <Background image={getImages(movie.backdrop_path)} />}
-      <Container>
-        <h1>Detalhes</h1>
-      </Container>
+      {movie && (
+        <>
+          <Background image={getImages(movie.backdrop_path)} />
+          <Container>
+            <Poster>
+              <img src={getImages(movie.poster_path)} />
+            </Poster>
+            <Info>
+              <h1>{movie.title}</h1>
+              <SpanGenres genres={movie.genres} />
+              <p>{movie.overview}</p>
+              <div>
+                <Credits credits={movieCredits} />
+              </div>
+            </Info>
+          </Container>
+          <ContainerMovies>
+            {movieVideos && (
+              <div key={movieVideos.id}>
+                <h4>{movieVideos.name}</h4>
+                <iframe
+                  src={`https://www.youtube.com/embed/${movieVideos.key}`}
+                  title="YouTube video player"
+                  height="500px"
+                  width="100%"
+                ></iframe>
+              </div>
+            )}
+          </ContainerMovies>
+          {movieSimilar && (
+            <Slider info={movieSimilar} title={'Filmes Similares'} />
+          )}
+        </>
+      )}
     </>
   )
 }
