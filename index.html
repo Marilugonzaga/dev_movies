@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/dev_movies/assets/apple-touch-icon-a38ef0ae.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,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"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAApVJREFUOE+Vk19IU1Ecx7/n3CnMzZmylVNntvnUuBSBlpQwZJUD7xwki/lQomFYLwqCD7qc4kPGKopgoaFGT74UbAQ6rMAeUiQfKp0Q5DZrs01a1iTFzRv3UkudBZ2n3/kdfp/z/f0j+MtZOG0uyMpM6pKUUjCygG3Zn8eybJXT6ayamZl5azQaO4RQsj3eAdCLHHeBgLRJCgvY19/jZDoWg7WzE5BlweVyIRQKwWazvamvrz+yA1BtMJSMNDQM+iIR492xMZy1WlFXV4fx8XEMDgzAUlGBYzIZolNTX1a/rVc2vnw2nwKMjo5avF7v42g0Spqbm6FUKnGvpwf6jAyUKXKgjMWQyzB/xPLwJX6sVegmJlbFFD61tnYrensdd/r7EZqcROPJU0hGIggvL+N4eRmCwaVfdjn8AT8ikQiO7j8wcHB46DKZMxjksty8j1+7r+W0t7ejpaUFKpUKDocDXV1dkEgkom2328HzPPr6+sR76fMXm2vTU1qyyHEWQuiT80tBFGm1YFkWbrcber0eOp0uZWu1Wng8HvFdo9HgzOwsihnmKvGbzXYC0lvrm0duURGkUumOxsrlcsTj8ZQvmUxiZWUFD/PVyGbofRLgaq+DoMMiADSaNIBarUY4HE4BEomECBgRAJR5RIJcbRtPcEtQwCgUf5urNL+gQEGJkyyauBM0g74SFND/AIgKQM8JbSQBzvzOsuA7vG+PGuz++ncNhvPVn7PX4iXiHPg5zmSdm3u6JZXuGO1/5XO7sLCp0usdSgUI3aAgPfyu/dgLQnjeVexxX0lbpg81NZcYQm+CkL2ryfPrW+AdhzyeGwD4NIDgeG8yqTIZpokntJoApSDCxhI/+K2JzY2NB6Ve79J2VT8BUWn06ebIVggAAAAASUVORK5CYII="
+    />
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsImljb25zIjpbeyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dLCJ0aGVtZV9jb2xvciI6IiNmZmZmZmYiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIn0=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dev Movies</title>
+    <script type="module" crossorigin src="/dev_movies/assets/index-8006c55d.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-  <title>Dev Movies</title>
-  <script type="module" crossorigin src="/dev_movies/assets/index-f218bba5.js"></script>
-</head>
-
-<body>
-  <div id="root"></div>
-  
-</body>
-
+  <body>
+    <div id="root"></div>
+    
+  </body>
 </html>
