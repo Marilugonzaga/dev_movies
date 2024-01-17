@@ -1,23 +1,22 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    padding: 0 20px;
-    width: 100vw;
-    max-width: 100%;
+  padding: 0 20px;
+  width: 100vw;
+  max-width: 100%;
+  z-index: 99;
 
-    .swipper{ 
-    }
+  .swipper {
+  }
 
-    .swiper-wrapper{
-        display: flex;
-        
-        /* overflow: hidden;  */
-    }
+  .swiper-wrapper {
+    display: flex;
 
-    h2{
-        margin: 50px 0 20px 20px;
-        font-size: 24px;
-    }
+    /* overflow: hidden;  */
+  }
 
+  h2 {
+    margin: 50px 0 20px 20px;
+    font-size: 24px;
+  }
 `
-

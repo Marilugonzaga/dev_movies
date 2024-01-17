@@ -53,3 +53,38 @@ export async function getMovieById(movieId) {
   const { data } = await api.get(`/movie/${movieId}`)
   return data
 }
+
+export async function getSeriesOn() {
+  const {
+    data: { results },
+  } = await api.get('/tv/on_the_air')
+  return results
+}
+
+export async function getSeriesToDay() {
+  const {
+    data: { results },
+  } = await api.get('/tv/airing_today')
+  return results
+}
+
+export async function getMoviesNow() {
+  const {
+    data: { results },
+  } = await api.get('/movie/now_playing')
+  return results
+}
+
+export async function getPopularMovie() {
+  const {
+    data: { results },
+  } = await api.get('/movie/popular')
+  return results
+}
+
+export async function getMovieUp() {
+  const {
+    data: { results },
+  } = await api.get('/movie/upcoming')
+  return results
+}

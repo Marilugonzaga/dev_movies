@@ -24,10 +24,10 @@ function Header() {
           <Link to={'/dev_movies/'}>Home</Link>
         </Li>
         <Li isActive={pathname.includes('filmes')}>
-          <Link to={'/filmes'}>Filmes</Link>
+          <Link to={'/dev_movies/filmes'}>Filmes</Link>
         </Li>
         <Li isActive={pathname.includes('series')}>
-          <Link to={'/series'}>Séries</Link>
+          <Link to={'/dev_movies/series'}>Séries</Link>
         </Li>
       </Menu>
     </Container>
