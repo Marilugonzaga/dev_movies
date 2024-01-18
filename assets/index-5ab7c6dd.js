@@ -488,6 +488,7 @@ body{
    background: #000000;
    max-width: 100vw;
     max-height: 100vh;
+    overflow-x: hidden;
 }
 
 `;ul.createRoot(document.getElementById("root")).render(_.jsx(Q.StrictMode,{children:_.jsxs(P0,{children:[_.jsx(Sx,{}),_.jsx(hx,{}),_.jsx(wx,{})]})}));
