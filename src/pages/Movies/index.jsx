@@ -34,6 +34,7 @@ function Movie() {
 
     getAllData()
   }, [])
+
   return (
     <>
       <Background>{moviesUp && <SliderAutomatic info={moviesUp} />}</Background>

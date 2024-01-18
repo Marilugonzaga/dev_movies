@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding: 0 20px;
   width: 100vw;
   max-width: 100%;
-  z-index: 99;
+  z-index: 10;
 
   .swipper {
   }
