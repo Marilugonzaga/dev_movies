@@ -158,7 +158,7 @@ to{
   padding: 0 20px;
   width: 100vw;
   max-width: 100%;
-  z-index: 99;
+  z-index: 10;
 
   .swipper {
   }
@@ -273,6 +273,7 @@ to{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-attachment: fixed;
 
   &::before {
     content: '';
@@ -423,58 +424,53 @@ transform: scale(1);
   font-weight: 700;
   margin-top: 20px;
 `;function dx({credits:e}){return _.jsxs(_.Fragment,{children:[_.jsx(fx,{children:"Créditos"}),e&&_.jsx(cx,{children:e.slice(0,5).map(t=>_.jsxs("div",{children:[_.jsx("img",{src:Pn(t.profile_path)}),_.jsx("p",{children:t.original_name})]},t.id))})]})}function px(){const{id:e}=s0(),[t,n]=P.useState(),[r,i]=P.useState(),[o,s]=P.useState(),[l,a]=P.useState();return P.useEffect(()=>{async function u(){Promise.all([Fw(e),bw(e),Dw(e),nm(e)]).then(([d,p,h,v])=>{n(d),i(p),s(h),a(v)}).catch(d=>console.error(d))}u()},[]),_.jsx(_.Fragment,{children:t&&_.jsxs(_.Fragment,{children:[_.jsx(ix,{image:Pn(t.backdrop_path)}),_.jsxs(rx,{children:[_.jsx(ox,{children:_.jsx("img",{src:Pn(t.poster_path)})}),_.jsxs(sx,{children:[_.jsx("h1",{children:t.title}),_.jsx(ux,{genres:t.genres}),_.jsx("p",{children:t.overview}),_.jsx("div",{children:_.jsx(dx,{credits:o})})]})]}),_.jsx(lx,{children:l&&_.jsxs("div",{children:[_.jsx("h4",{children:l.name}),_.jsx("iframe",{src:`https://www.youtube.com/embed/${l.key}`,title:"YouTube video player",height:"500px",width:"100%"})]},l.id)}),r&&_.jsx(Qe,{info:r,title:"Filmes Similares"})]})})}function hx(){return _.jsx(_.Fragment,{children:_.jsxs(x0,{children:[_.jsx(Rr,{element:_.jsx(Yw,{}),path:"/dev_movies/"}),_.jsx(Rr,{element:_.jsx(Jw,{}),path:"/dev_movies/series"}),_.jsx(Rr,{element:_.jsx(tx,{}),path:"/dev_movies/filmes"}),_.jsx(Rr,{element:_.jsx(px,{}),path:"/dev_movies/detalhe/:id"})]})})}const mx="/dev_movies/assets/logo-03a13306.png",gx=W.div`
-    background: ${e=>e.changeBackground?"#000000":"transparent"};
-    z-index: 99;
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    min-height: 60px;
-    transition: background-color 0.6s ease-in-out;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  min-height: 60px;
 
-    img{
-        width: 20%;
-    }
-
+  img {
+    width: 20%;
+  }
 `,vx=W.ul`
-    display: flex;
-    list-style: none;
-    gap: 50px;
-    padding-right: 50px;
-    text-decoration: none;
-
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  padding-right: 50px;
+  text-decoration: none;
 `,al=W.li`
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 25px;
+  position: relative;
+
+  a {
     text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 25px;
-    position: relative;
+    color: #ffffff;
+  }
 
-    a{
-        text-decoration: none;
-        color: #ffffff;
+  &::after {
+    content: '';
+    height: 3px;
+    width: ${e=>e.isActive?"100%":0};
+    background-color: #189b20;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: width 0.3s ease-in-out;
+  }
 
-    }
-
-    &::after{
-        content: '';
-        height: 3px;
-        width: ${e=>e.isActive?"100%":0};
-        background-color: #189b20;
-        position: absolute;
-        bottom: -5px;
-        left: 50%;
-        transform: translate(-50%);
-        transition: width 0.3s ease-in-out;
-    }
-
-    &:hover::after{
-        width: 100%;
-    }
-
-`;function yx(){const{pathname:e}=yi(),[t,n]=P.useState(!1);return window.scrollY=()=>{!n&&window.pageYOffset>150&&n(!0),n&&window.pageYOffset<=150&&n(!1)},_.jsxs(gx,{changeBackground:t,children:[_.jsx("img",{src:mx,alt:"logo-dev-movies"}),_.jsxs(vx,{children:[_.jsx(al,{isActive:e==="/",children:_.jsx(Ys,{to:"/dev_movies/",children:"Home"})}),_.jsx(al,{isActive:e.includes("filmes"),children:_.jsx(Ys,{to:"/dev_movies/filmes",children:"Filmes"})}),_.jsx(al,{isActive:e.includes("series"),children:_.jsx(Ys,{to:"/dev_movies/series",children:"Séries"})})]})]})}function Sx(){return _.jsxs(_.Fragment,{children:[_.jsx(yx,{}),_.jsx(S0,{})]})}const wx=Ny`
+  &:hover::after {
+    width: 100%;
+  }
+`;function yx(){const{pathname:e}=yi();return _.jsxs(gx,{children:[_.jsx("img",{src:mx,alt:"logo-dev-movies"}),_.jsxs(vx,{children:[_.jsx(al,{isActive:e==="/dev_movies/",children:_.jsx(Ys,{to:"/dev_movies/",children:"Home"})}),_.jsx(al,{isActive:e.includes("filmes"),children:_.jsx(Ys,{to:"/dev_movies/filmes",children:"Filmes"})}),_.jsx(al,{isActive:e.includes("series"),children:_.jsx(Ys,{to:"/dev_movies/series",children:"Séries"})})]})]})}function Sx(){return _.jsxs(_.Fragment,{children:[_.jsx(yx,{}),_.jsx(S0,{})]})}const wx=Ny`
 *{
     padding: 0;
     margin: 0;
